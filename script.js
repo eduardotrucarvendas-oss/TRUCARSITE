@@ -3,24 +3,26 @@ const CONTACT = {
   whatsappDisplay: "+55 (48) 98833-7910"
 };
 
+// Edite apenas esta lista semanalmente para atualizar as ofertas do site.
 const OFFERS = [
-  { title: "Promoção da semana", text: "Chapas selecionadas com condição especial para retirada programada." },
-  { title: "Material de segunda", text: "Lotes com excelente custo-benefício, sob consulta de disponibilidade." },
-  { title: "Entrega quarta-feira", text: "Roteiro regional com vagas para nova programação de entrega." },
-  { title: "Lote especial", text: "Tubos e perfis com oportunidade para fechamento rápido." },
-  { title: "Estoque limitado", text: "Galvanizados com volume restrito para pronta negociação." }
+  { title: "Promoção da semana", text: "Chapas selecionadas com condição comercial especial." },
+  { title: "Lote especial", text: "Tubos e perfis com disponibilidade limitada." },
+  { title: "Material de segunda", text: "Saldos por kg com ótimo custo-benefício." },
+  { title: "Entrega programada", text: "Rotas regionais com novas vagas para esta semana." }
 ];
 
-function setupWhatsAppLinks() {
-  const baseUrl = `https://wa.me/${CONTACT.whatsappNumber}`;
-  const message = encodeURIComponent("Olá! Quero solicitar um orçamento na TRUCAR Metal Center.");
-  const fullUrl = `${baseUrl}?text=${message}`;
+function buildWhatsAppUrl() {
+  const base = `https://wa.me/${CONTACT.whatsappNumber}`;
+  const text = encodeURIComponent("Olá! Quero solicitar um orçamento na TRUCAR Metal Center.");
+  return `${base}?text=${text}`;
+}
 
-  const ids = ["headerWhatsApp", "heroWhatsApp", "floatWhatsApp", "textWhatsApp", "footerWhatsApp"];
-  ids.forEach((id) => {
+function setupWhatsApp() {
+  const url = buildWhatsAppUrl();
+  ["headerWhatsApp", "heroWhatsApp", "opportunityWhatsApp", "floatWhatsApp", "textWhatsApp", "footerWhatsApp"].forEach((id) => {
     const el = document.getElementById(id);
     if (!el) return;
-    el.href = fullUrl;
+    el.href = url;
     if (id === "textWhatsApp" || id === "footerWhatsApp") {
       el.textContent = CONTACT.whatsappDisplay;
     } else {
@@ -29,20 +31,18 @@ function setupWhatsAppLinks() {
     }
   });
 
-  document.querySelectorAll(".mini-whats").forEach((link) => {
-    link.href = fullUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+  document.querySelectorAll(".mini-whats").forEach((el) => {
+    el.href = url;
+    el.target = "_blank";
+    el.rel = "noopener noreferrer";
   });
 }
 
 function renderOffers() {
-  const slider = document.getElementById("offerSlider");
-  if (!slider) return;
-
-  slider.innerHTML = OFFERS.map((offer) => `
-    <article class="offer-item">
-      <p class="eyebrow">OFERTA</p>
+  const root = document.getElementById("offersGrid");
+  root.innerHTML = OFFERS.map((offer) => `
+    <article class="offer-card">
+      <p class="kicker">OFERTA</p>
       <h3>${offer.title}</h3>
       <p>${offer.text}</p>
       <a class="mini-whats" href="#">Cotar agora</a>
@@ -52,4 +52,4 @@ function renderOffers() {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 renderOffers();
-setupWhatsAppLinks();
+setupWhatsApp();
