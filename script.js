@@ -3,23 +3,20 @@ const CONTACT = {
   whatsappDisplay: "+55 (48) 98833-7910"
 };
 
-// Edite apenas esta lista semanalmente para atualizar as ofertas do site.
 const OFFERS = [
-  { title: "Promoção da semana", text: "Chapas selecionadas com condição comercial especial." },
-  { title: "Lote especial", text: "Tubos e perfis com disponibilidade limitada." },
-  { title: "Material de segunda", text: "Saldos por kg com ótimo custo-benefício." },
-  { title: "Entrega programada", text: "Rotas regionais com novas vagas para esta semana." }
+  { title: "Chapas em destaque", text: "Condição especial para lotes da semana." },
+  { title: "Tubos com giro rápido", text: "Estoque ativo e disponibilidade sob consulta." },
+  { title: "Material de oportunidade", text: "Saldos com preço competitivo por kg." }
 ];
 
-function buildWhatsAppUrl() {
-  const base = `https://wa.me/${CONTACT.whatsappNumber}`;
-  const text = encodeURIComponent("Olá! Quero solicitar um orçamento na TRUCAR Metal Center.");
-  return `${base}?text=${text}`;
+function whatsappUrl() {
+  const msg = encodeURIComponent("Olá! Quero solicitar um orçamento na TRUCAR Metal Center.");
+  return `https://wa.me/${CONTACT.whatsappNumber}?text=${msg}`;
 }
 
-function setupWhatsApp() {
-  const url = buildWhatsAppUrl();
-  ["headerWhatsApp", "heroWhatsApp", "opportunityWhatsApp", "floatWhatsApp", "textWhatsApp", "footerWhatsApp"].forEach((id) => {
+function bindWhatsApp() {
+  const url = whatsappUrl();
+  ["headerWhatsApp", "heroWhatsApp", "floatWhatsApp", "textWhatsApp", "footerWhatsApp"].forEach((id) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.href = url;
@@ -40,11 +37,11 @@ function setupWhatsApp() {
 
 function renderOffers() {
   const root = document.getElementById("offersGrid");
-  root.innerHTML = OFFERS.map((offer) => `
+  root.innerHTML = OFFERS.map((item) => `
     <article class="offer-card">
       <p class="kicker">OFERTA</p>
-      <h3>${offer.title}</h3>
-      <p>${offer.text}</p>
+      <h3>${item.title}</h3>
+      <p>${item.text}</p>
       <a class="mini-whats" href="#">Cotar agora</a>
     </article>
   `).join("");
@@ -52,4 +49,4 @@ function renderOffers() {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 renderOffers();
-setupWhatsApp();
+bindWhatsApp();
