@@ -28,13 +28,17 @@
   </header>
 
   <section class="hero" id="inicio">
-    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1565610222536-ef125c59da2d?auto=format&fit=crop&w=1800&q=80">
+    <video autoplay muted loop playsinline class="hero-video" poster="https://images.unsplash.com/photo-1565610222536-ef125c59da2d?auto=format&fit=crop&w=1800&q=80">
+      <source src="videos/industria.mp4" type="video/mp4" />
       <source src="https://cdn.coverr.co/videos/coverr-welding-at-work-1579/1080p.mp4" type="video/mp4" />
     </video>
+
     <div class="overlay"></div>
-    <div class="container hero-inner">
+
+    <div class="container hero-content">
       <p class="kicker">OPERAÇÃO INDUSTRIAL • ESTOQUE ATIVO • ATENDIMENTO B2B</p>
       <h1>Aço em movimento diário para atender sua operação.</h1>
+      <p class="hero-sub">Chapas, tubos, metalon e galvanizados com giro real de estoque e atendimento comercial ágil.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#orcamento">Solicitar orçamento</a>
         <a class="btn btn-outline" href="#produtos">Ver produtos</a>
@@ -46,68 +50,19 @@
     <section class="section dark" id="operacao">
       <div class="container visual-grid">
         <article class="visual large"><img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80" alt="Carregamento industrial" /><div><h3>Carregamento diário</h3><p>Fluxo contínuo de materiais para indústria, manutenção e construção.</p></div></article>
-        <article class="visual"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80" alt="Tubos em estoque" /><div><h3>Estoque de tubos</h3><p>Disponibilidade para atender demandas recorrentes e urgentes.</p></div></article>
+        <article class="visual"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80" alt="Tubos em estoque" /><div><h3>Estoque de tubos</h3><p>Disponibilidade para demandas recorrentes e urgentes.</p></div></article>
         <article class="visual"><img src="https://images.unsplash.com/photo-1565610222536-ef125c59da2d?auto=format&fit=crop&w=900&q=80" alt="Chapas de aço" /><div><h3>Chapas e perfis</h3><p>Materiais industriais com suporte comercial direto.</p></div></article>
       </div>
     </section>
 
-    <section class="section light" id="produtos">
-      <div class="container">
-        <h2>Produtos principais</h2>
-        <div class="product-grid">
-          <article><h3>Chapas</h3><a class="mini-whats" href="#">Cotar</a></article>
-          <article><h3>Tubos</h3><a class="mini-whats" href="#">Cotar</a></article>
-          <article><h3>Metalon</h3><a class="mini-whats" href="#">Cotar</a></article>
-          <article><h3>Perfis</h3><a class="mini-whats" href="#">Cotar</a></article>
-          <article><h3>Galvanizados</h3><a class="mini-whats" href="#">Cotar</a></article>
-          <article><h3>Oportunidades</h3><a class="mini-whats" href="#">Cotar</a></article>
-        </div>
-      </div>
-    </section>
+    <section class="section light" id="produtos"><div class="container"><h2>Produtos principais</h2><div class="product-grid"><article><h3>Chapas</h3><a class="mini-whats" href="#">Cotar</a></article><article><h3>Tubos</h3><a class="mini-whats" href="#">Cotar</a></article><article><h3>Metalon</h3><a class="mini-whats" href="#">Cotar</a></article><article><h3>Perfis</h3><a class="mini-whats" href="#">Cotar</a></article><article><h3>Galvanizados</h3><a class="mini-whats" href="#">Cotar</a></article><article><h3>Oportunidades</h3><a class="mini-whats" href="#">Cotar</a></article></div></div></section>
 
-    <section class="section dark" id="ofertas">
-      <div class="container">
-        <div class="title-row">
-          <h2>Ofertas da semana</h2>
-          <small>Atualize apenas o array OFFERS no script.js</small>
-        </div>
-        <div id="offersGrid" class="offers"></div>
-      </div>
-    </section>
+    <section class="section dark" id="ofertas"><div class="container"><div class="title-row"><h2>Ofertas da semana</h2><small>Atualize apenas o array OFFERS no script.js</small></div><div id="offersGrid" class="offers"></div></div></section>
 
-    <section class="section light" id="orcamento">
-      <div class="container contact">
-        <div>
-          <h2>Atendimento comercial regional</h2>
-          <p>TRUCAR Metal Center atende clientes B2B com resposta rápida e operação ativa de estoque.</p>
-          <p><strong>WhatsApp:</strong> <a id="textWhatsApp" href="#"></a></p>
-          <p><strong>E-mail:</strong> comercial@trucarmetal.com.br</p>
-        </div>
-        <form class="form" action="#" method="post">
-          <label>Nome<input type="text" required /></label>
-          <label>Empresa<input type="text" required /></label>
-          <label>WhatsApp<input type="tel" required /></label>
-          <label>Material de interesse<input type="text" required /></label>
-          <button class="btn btn-primary" type="submit">Enviar orçamento</button>
-        </form>
-      </div>
-    </section>
+    <section class="section light" id="orcamento"><div class="container contact"><div><h2>Atendimento comercial regional</h2><p>TRUCAR Metal Center atende clientes B2B com resposta rápida e operação ativa de estoque.</p><p><strong>WhatsApp:</strong> <a id="textWhatsApp" href="#"></a></p><p><strong>E-mail:</strong> comercial@trucarmetal.com.br</p></div><form class="form" action="#" method="post"><label>Nome<input type="text" required /></label><label>Empresa<input type="text" required /></label><label>WhatsApp<input type="tel" required /></label><label>Material de interesse<input type="text" required /></label><button class="btn btn-primary" type="submit">Enviar orçamento</button></form></div></section>
   </main>
 
-  <footer class="footer">
-    <div class="container foot-grid">
-      <div>
-        <strong>TRUCAR Metal Center</strong>
-        <p>Empresa consolidada com foco em aço, operação e relacionamento comercial.</p>
-      </div>
-      <div>
-        <p><strong>WhatsApp:</strong> <a id="footerWhatsApp" href="#"></a></p>
-        <p><strong>Região:</strong> Litoral, Sul SC, Vale e Norte</p>
-        <p><strong>Site:</strong> <a href="https://www.eduardokuntzemetais.com" target="_blank" rel="noopener noreferrer">www.eduardokuntzemetais.com</a></p>
-      </div>
-    </div>
-    <p class="copy">© <span id="year"></span> TRUCAR Metal Center</p>
-  </footer>
+  <footer class="footer"><div class="container foot-grid"><div><strong>TRUCAR Metal Center</strong><p>Empresa consolidada com foco em aço, operação e relacionamento comercial.</p></div><div><p><strong>WhatsApp:</strong> <a id="footerWhatsApp" href="#"></a></p><p><strong>Região:</strong> Litoral, Sul SC, Vale e Norte</p><p><strong>Site:</strong> <a href="https://www.eduardokuntzemetais.com" target="_blank" rel="noopener noreferrer">www.eduardokuntzemetais.com</a></p></div></div><p class="copy">© <span id="year"></span> TRUCAR Metal Center</p></footer>
 
   <a id="floatWhatsApp" class="float-whats" href="#">Orçamento no WhatsApp</a>
   <script src="script.js"></script>
